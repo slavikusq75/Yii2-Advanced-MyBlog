@@ -6,7 +6,13 @@ class MainController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $hello = 'Hello everybody!';
+
+        return $this->render(
+            'index',
+            [
+                'hello' => $hello
+            ]);
     }
 
 }

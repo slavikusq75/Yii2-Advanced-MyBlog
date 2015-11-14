@@ -16,7 +16,7 @@
 <body>
 <p>Upper part of the site</p>
 
-<?php $content ?>
+<?= $content ?>
 <p>Lower part of the site</p>
 </body>
 </html>
