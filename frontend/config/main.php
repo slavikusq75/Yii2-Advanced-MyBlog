@@ -8,10 +8,13 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'name' => 'Yii2 приложение',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'basic',
     'defaultRoute' => 'main/index',
+    'language' => 'en_En',
+    'charset' => 'UTF-8',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [

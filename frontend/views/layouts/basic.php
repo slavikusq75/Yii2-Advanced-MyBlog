@@ -9,14 +9,16 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="<?=Yii::$app->language ?>">
 <head>
-    <title></title>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <title><?= Yii::$app->name ?></title>
 </head>
 <body>
 <p>Upper part of the site</p>
 
 <?= $content ?>
+
 <p>Lower part of the site</p>
 </body>
 </html>
