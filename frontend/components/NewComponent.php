@@ -8,11 +8,13 @@
 namespace frontend\components;
 use Yii;
 use yii\base\Component;
+use yii\base\Event;
 use yii\base\InvalidCallException;
 
 class NewComponent extends Component
 {
     public $property = "NewComponent property is called<br/>";
+    const EVENT_HELLO = 'Model is recieved';
 
     public function init()
     {
@@ -21,11 +23,6 @@ class NewComponent extends Component
 
     public  function onSomeEvent($event)
     {
-        $this->raiseEvent('onSomeEvent', $event);
-    }
-
-    public function addPost()
-    {
-        $this->onSomeEvent(new CEvent);
+        $this->trigger(self::EVENT_HELLO, $event);
     }
 }
