@@ -2,11 +2,12 @@
 
 namespace frontend\controllers;
 
+use frontend\components\NewComponent;
 use Yii;
 use frontend\models\RegForm;
 use frontend\models\LoginForm;
 use frontend\models\Client;
-
+use frontend\components;
 
 
 class MainController extends \yii\web\Controller
@@ -24,6 +25,9 @@ class MainController extends \yii\web\Controller
 
     public function actionClient()
     {
+        $NewComponent = new NewComponent();
+        echo $NewComponent->property;
+
         $model = new Client();
 
         return $this->render(

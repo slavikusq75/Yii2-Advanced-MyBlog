@@ -12,6 +12,8 @@ use Yii;
 
 class Client extends Model
 {
+    protected $name = 'John Doe';
+
     public function __construct()
     {
        echo 'I am a new client!';
