@@ -11,6 +11,9 @@ use yii\base\Component;
 use yii\base\InvalidCallException;
 
 class NewComponent extends Component
+
+public $property = 'NewComponent property is called';
+
 {
     public function init()
     {
@@ -19,6 +22,6 @@ class NewComponent extends Component
 
     public function test()
     {
-        echo 'It i my first component';
+        echo 'It is my first component';
     }
 }
