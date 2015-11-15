@@ -14,6 +14,6 @@ class Client extends Model
 {
     public function __construct()
     {
-        echo 'I am a new client!';
+       echo 'I am a new client!';
     }
 }

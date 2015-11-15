@@ -12,7 +12,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'basic',
-    'defaultRoute' => 'main/index',
+    'defaultRoute' => 'main/client',
     'language' => 'en_En',
     'charset' => 'UTF-8',
     'controllerNamespace' => 'frontend\controllers',

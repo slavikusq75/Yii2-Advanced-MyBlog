@@ -1,20 +1,9 @@
 <?php
-
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Client */
-/* @var $form ActiveForm */
+/* $var $model string */
 ?>
-<div class="main-client">
+<h1>main/index</h1>
 
-    <?php $form = ActiveForm::begin(); ?>
-
-    
-        <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
-        </div>
-    <?php ActiveForm::end(); ?>
-
-</div><!-- main-client -->
+<p>
+    <?= json_encode($model) ?>
+</p>

@@ -11,7 +11,7 @@ use frontend\models\Client;
 
 class MainController extends \yii\web\Controller
 {
-    public function actionIndex()
+/*    public function actionIndex()
     {
         $hello = 'Hello everybody!';
 
@@ -20,9 +20,9 @@ class MainController extends \yii\web\Controller
             [
                 'hello' => $hello
             ]);
-    }
+    } */
 
-/*    public function actionClient()
+    public function actionClient()
     {
         $model = new Client();
 
@@ -34,7 +34,7 @@ class MainController extends \yii\web\Controller
         );
     }
 
-    public function actionReg()
+/*    public function actionReg()
     {
         $model = new RegForm();
 
