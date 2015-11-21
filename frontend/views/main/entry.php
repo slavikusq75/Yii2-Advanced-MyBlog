@@ -7,21 +7,17 @@
  */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+//use yii\validators;
+//use yii\bootstrap\ActiveForm;
 ?>
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'verifyCode')->widget(
-        yii\captcha\Captcha::className(),
-        [
-            'template' => '<div class="row><div class="col-xs-3">{image}</div><div class="col-xs-4">{input}</div></div>',
-        ]
-    )->hint('Push a button to renew')."</br>"
-    ?>
-
     <?= $form->field($model, 'name')."</br>" ?>
 
     <?= $form->field($model, 'surname')."</br>" ?>
+
+    <?= $form->field($model, 'age')."</br>" ?>
 
     <?= $form->field($model, 'email')."</br>" ?>
 
@@ -49,6 +45,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'additionalServises')->checkboxlist(['Computer repairing', 'Web design', 'Hosting'])
         ->hint('Which of these additional services do You want to use?')."</br>" ?>
+
+    <?= $form->field($model, 'verifyCode')->widget(
+        yii\captcha\Captcha::className(),
+        [
+            'template' => '<div class="row><div class="col-xs-3">{image}</div><div class="col-xs-4">{input}</div></div>',
+        ]
+    )->hint('Push a button to renew')."</br>"
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
