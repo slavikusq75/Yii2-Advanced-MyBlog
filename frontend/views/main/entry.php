@@ -14,6 +14,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email') ?>
 
+    <?= $form->field($model,'status')->dropDownList([
+
+        '0' => 'Active',
+        '1' => 'Turned off',
+        '2' => 'Deleted'
+
+    ]);
+
+    ?>
+
     <div class="form-group">
         <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
     </div>
