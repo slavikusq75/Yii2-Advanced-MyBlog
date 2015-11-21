@@ -3,11 +3,13 @@
 namespace frontend\controllers;
 
 use frontend\components\NewComponent;
+use frontend\models\EntryForm;
 use Yii;
 use frontend\models\RegForm;
 use frontend\models\LoginForm;
 use frontend\models\Client;
 use frontend\components;
+use frontend\models\TechSupportApp;
 
 
 class MainController extends \yii\web\Controller
@@ -22,6 +24,20 @@ class MainController extends \yii\web\Controller
                 'hello' => $hello
             ]);
     } */
+
+    public function actionEntry()
+    {
+        $model = new EntryForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+            return $this->render('entry-confirm', ['model' => $model]);
+
+        } else {
+
+            return $this->render('entry', ['model' => $model]);
+        }
+    }
 
     public function actionClient()
     {
@@ -38,19 +54,19 @@ class MainController extends \yii\web\Controller
         );
     }
 
-/*    public function actionReg()
+    /*public function actionTechSupportApp()
     {
-        $model = new RegForm();
+        $model = new TechSupportApp();
 
-        return $this->render(
-            'reg',
-            [
-                'model' => $model
-            ]
-        );
-    }
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            return $this->render('techsupportapp', ['model' => $model]);
 
-    public function actionLogin()
+        } else {
+            return $this->render('techsupportapp', ['model' => $model]);
+        }
+    }*/
+
+    /*public function actionLogin()
     {
         $model = new LoginForm();
 

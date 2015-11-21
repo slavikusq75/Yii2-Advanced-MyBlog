@@ -8,9 +8,9 @@
 return [
     'db' => [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=frontend.dev;dbname=pawnshop',
-    'username' => 'user',
-    'password' => 'password',
+    'dsn' => 'mysql:host=frontend.dev;dbname=PawnShop',
+    'username' => 'root',
+    'password' => '7Rtz0mj4h',
     'charset' => 'utf8',
     ],
 ];
