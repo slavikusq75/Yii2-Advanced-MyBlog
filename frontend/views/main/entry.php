@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'name') ?>
 
@@ -26,7 +26,11 @@ use yii\widgets\ActiveForm;
 
     ?>
 
-    <div class="form-group">
+    <?= $form->field($model, 'extraservices')->checkboxlist(['1', '2', '3']) ?>
+
+    <?= $form->field($model, 'file')->fileInput() ?>
+
+<div class="form-group">
         <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
     </div>
 
