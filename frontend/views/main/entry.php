@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email') ?>
 
+    <?= $form->field($model, 'sex')->radiolist(['Male', 'Female']) ?>
+
     <?= $form->field($model,'status')->dropDownList([
 
         '0' => 'Active',
