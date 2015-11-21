@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
         ->hint('Send us a screenshot, it helps to solve Your problem!')."</br>" ?>
 
     <?= $form->field($model, 'additionalServises')->checkboxlist(['Computer repairing', 'Web design', 'Hosting'])
-        ->hint('Which of these additional services do You want to use?')."</br>" ?>
+        ->hint('Which of our additional services do You want to use?')."</br>" ?>
 
     <?= $form->field($model, 'verifyCode')->widget(
         yii\captcha\Captcha::className(),
