@@ -15,7 +15,7 @@
     <title><?= Yii::$app->name ?></title>
 </head>
 <body>
-<h1>Technition support application form</h1></br>
+<h1>Technical support application form</h1></br>
 
 <?= $content ?>
 
