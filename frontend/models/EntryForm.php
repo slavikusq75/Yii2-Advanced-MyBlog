@@ -18,7 +18,7 @@ class EntryForm extends Model
     public $email;
     public $status;
     public $sex;
-    public $additionalServises;
+    public $additionalServices;
     public $file;
     public $verifyCode;
     public $textArea;
@@ -27,12 +27,13 @@ class EntryForm extends Model
     public function rules()
     {
         return [
-            [['textArea'], 'required'],
+            [['textArea', 'age'], 'required'],
             ['name', 'required', 'message' => 'Please type a name'],
             ['surname', 'required', 'message' => 'Please type a surname'],
             ['age', 'compare', 'compareValue' => 18, 'operator' => '>=', 'message' => 'Sorry, You are under 18, permission denied'],
             ['email', 'required', 'message' => 'Please type an email'],
-            ['email', 'email'],
+            ['email', 'email', 'message' => 'Email is not correct!'],
+            ['additionalServices', 'default', 'value' => 'Nothing'],
             [['file'], 'file']
         ];
     }

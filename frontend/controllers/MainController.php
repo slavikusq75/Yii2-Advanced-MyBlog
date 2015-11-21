@@ -39,7 +39,7 @@ class MainController extends \yii\web\Controller
         }
     }
 
-    public function actionClient()
+    /*public function actionClient()
     {
         $NewComponent = new NewComponent();
         echo $NewComponent->property;
@@ -52,7 +52,7 @@ class MainController extends \yii\web\Controller
                 'model' => $model
             ]
         );
-    }
+    }*/
 
     /*public function actionTechSupportApp()
     {
