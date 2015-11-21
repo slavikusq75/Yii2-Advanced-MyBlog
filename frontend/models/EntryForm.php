@@ -30,7 +30,10 @@ class EntryForm extends Model
             [['textArea', 'age'], 'required'],
             ['name', 'required', 'message' => 'Please type a name'],
             ['surname', 'required', 'message' => 'Please type a surname'],
-            ['age', 'compare', 'compareValue' => 18, 'operator' => '>=', 'message' => 'Sorry, You are under 18, permission denied'],
+            ['age',  'compare', 'compareValue' => 18, 'operator' => '>=',
+                'message' => 'Sorry, You are under 18, permission denied'
+            ],
+            ['age', 'integer'],
             ['email', 'required', 'message' => 'Please type an email'],
             ['email', 'email', 'message' => 'Email is not correct!'],
             ['additionalServices', 'default', 'value' => 'Nothing'],
