@@ -15,10 +15,10 @@
     <title><?= Yii::$app->name ?></title>
 </head>
 <body>
-<p>Upper part of the site</p>
+<p>Technition support application form</p></br>
 
 <?= $content ?>
 
-<p>Lower part of the site</p>
+<p>Thank You for Your appeal!</p>
 </body>
 </html>

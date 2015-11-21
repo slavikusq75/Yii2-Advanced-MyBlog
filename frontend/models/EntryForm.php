@@ -17,14 +17,15 @@ class EntryForm extends Model
     public $email;
     public $status;
     public $sex;
-    public $extraservices;
+    public $additionalServises;
     public $file;
     public $verifyCode;
+    public $textArea;
 
     public function rules()
     {
         return [
-            [['name', 'email', 'status', 'sex', 'extraservices', 'phoneNumber'], 'required'],
+            [['name', 'email', 'status', 'sex', 'additionalServises', 'phoneNumber', 'textArea'], 'required'],
             ['email', 'email'],
             [['file'], 'file']
         ];
