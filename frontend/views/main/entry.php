@@ -43,8 +43,12 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'file')->fileInput()
         ->hint('Send us a screenshot, it helps to solve Your problem!')."</br>" ?>
 
+    <?= $form->field($model, 'website')->hint('Please, input URL of Your site')."</br>" ?>
+
     <?= $form->field($model, 'additionalServices')->checkboxlist(['Computer repairing', 'Web design', 'Hosting', 'Nothing'])
         ->hint('Which of our additional services do You want to use?')."</br>" ?>
+
+    <?= $form->field($model, 'estimation')->hint('Please, estimate our service from 1 to 5')."</br>" ?>
 
     <?= $form->field($model, 'verifyCode')->widget(
         yii\captcha\Captcha::className(),
