@@ -46,8 +46,8 @@ class EntryForm extends Model
             ['estimation', 'in', 'range' => [1,2,3]],
             ['website', 'url', 'defaultScheme' => 'http'],
 
-            [['file'], 'file'],
-            ['file', 'image', 'extensions' => 'png, jpg']
+            [['file'], 'file', 'extensions' => 'png, jpg'],
+            //['file', 'image', 'extensions' => 'png, jpg']
         ];
     }
 }
