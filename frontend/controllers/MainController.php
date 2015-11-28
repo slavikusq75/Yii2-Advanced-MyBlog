@@ -43,6 +43,8 @@ class MainController extends \yii\web\Controller
     public function actionTechsupport()
     {
         $model = new Techsupport();
+        $model->name = 'Vasiok';
+        $model->save();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
