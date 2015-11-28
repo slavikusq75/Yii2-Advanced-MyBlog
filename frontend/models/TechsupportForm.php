@@ -21,7 +21,7 @@ use Yii;
  * @property string $estimation
  * @property string $website
  */
-class Techsupport extends \yii\db\ActiveRecord
+class TechsupportForm extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

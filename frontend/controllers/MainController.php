@@ -4,13 +4,14 @@ namespace frontend\controllers;
 
 //use app\models\Techsupport;
 use frontend\components\NewComponent;
+use frontend\models\ContractsForm;
 use frontend\models\EntryForm;
 use Yii;
 use frontend\models\RegForm;
 use frontend\models\LoginForm;
 use frontend\models\Client;
 use frontend\components;
-use frontend\models\Techsupport;
+use frontend\models\TechsupportForm;
 //use yii\validators;
 
 class MainController extends \yii\web\Controller
@@ -40,11 +41,9 @@ class MainController extends \yii\web\Controller
         }
     }*/
 
-    public function actionTechsupport()
+    /*public function actionTechsupport()
     {
-        $model = new Techsupport();
-        $model->name = 'Vasiok';
-        $model->save();
+        $model = new TechsupportForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
@@ -54,8 +53,22 @@ class MainController extends \yii\web\Controller
 
             return $this->render('techsupport', ['model' => $model]);
         }
-    }
+    }*/
 
+    public function actionContracts()
+    {
+        $model = new ContractsForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+            $model->save();
+            return $this->render('contracts-confirm', ['model' => $model]);
+
+        } else {
+
+            return $this->render('contracts', ['model' => $model]);
+        }
+    }
     /*public function actionClient()
     {
         $NewComponent = new NewComponent();

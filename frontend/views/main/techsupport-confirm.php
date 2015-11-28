@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @var \app\models\Techsupport $model
+ * @var \frontend\models\TechsupportForm $model
  */
 use yii\helpers\Html;
 ?>
