@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model \yii\db\ActiveRecord */
+/* @var $model \frontend\models\TechsupportForm */
 /* @var $form ActiveForm */
 ?>
 <div class="techsupport">
