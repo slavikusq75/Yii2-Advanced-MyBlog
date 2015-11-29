@@ -16,6 +16,12 @@ class ContractsForm extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function getClients()
+    {
+        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
+    }
+
+
     public static function tableName()
     {
         return 'contracts';
