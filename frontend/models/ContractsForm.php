@@ -10,18 +10,16 @@ use Yii;
  * @property integer $id
  * @property integer $contract_number
  * @property string $contract_date
+ * @property integer $client_id
+ *
+ * @property Clients $clients
+ * @property Contracts[] $Contracts
  */
 class ContractsForm extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
-    public function getClients()
-    {
-        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
-    }
-
-
     public static function tableName()
     {
         return 'contracts';
@@ -34,7 +32,7 @@ class ContractsForm extends \yii\db\ActiveRecord
     {
         return [
             [['contract_number', 'contract_date'], 'required'],
-            [['contract_number'], 'integer'],
+            [['contract_number', 'client_id'], 'integer'],
             [['contract_date'], 'safe']
         ];
     }
@@ -48,6 +46,29 @@ class ContractsForm extends \yii\db\ActiveRecord
             'id' => 'ID',
             'contract_number' => 'Contract Number',
             'contract_date' => 'Contract Date',
+            'client_id' => 'Client ID',
         ];
     }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getClients()
+    {
+        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getContracts()
+    {
+        return $this->hasMany(Contracts::className(), ['client_id' => 'id']);
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    /*public function getChecks()
+    {
+        return $this->hasMany(Checks::className(), ['client_id' => 'id']);
+    }*/
 }
+

@@ -107,6 +107,8 @@ class MainController extends \yii\web\Controller
     public function actionClients()
     {
         $model = new ClientsForm();
+        //$queries = $model->find()->All();
+        //var_dump($query); exit;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 

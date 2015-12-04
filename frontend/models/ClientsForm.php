@@ -3,7 +3,6 @@
 namespace frontend\models;
 
 use Yii;
-
 /**
  * This is the model class for table "clients".
  *
@@ -14,13 +13,6 @@ use Yii;
  */
 class ClientsForm extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
-    public function getContracts()
-    {
-        return $this->hasMany(Contracts::className(), ['client_id' => 'id']);
-    }
 
     public static function tableName()
     {
