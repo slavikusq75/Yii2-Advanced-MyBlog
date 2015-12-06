@@ -16,13 +16,19 @@ class SecondWidget extends Widget
     {
 
         parent::init();
+        ob_start();
 
     }
 
     public function run()
     {
-
-        return $this->render('second');
+        $content = ob_get_clean();
+        return $this->render(
+            'second',
+            [
+                'content' => $content
+            ]
+        );
 
     }
 }
