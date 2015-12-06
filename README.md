@@ -1,15 +1,13 @@
 
 Домашечка № 4:
 
-1. Створені та підключені до форми techsupport файли: /css/main.css, /js/main.js, /js/main-index.js.
+-Створені та підключені до форми techsupport файли: /css/main.css; /js/main.js; /js/main-index.js.
 
-2. Підключені стандартні віджети: DatePicker; Modal (Bootstrap).
+-Підключені стандартні віджети: DatePicker; Modal (Bootstrap).
 
-3. Створені і підключені власні віджети:
--  FirstWidget;
--  SecondWidget
+-Створені і підключені власні віджети: FirstWidget; SecondWidget.
 
-
+______________________________________________________________________________
 
 1. Виберіть новий дизайн для вашої минулої домашки (Ви можете нагуглити
 готові шаблони з html+css+js файлами, або шаблони на основі bootstrap - на
