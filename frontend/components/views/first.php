@@ -7,7 +7,7 @@
  * @var $c int
  */
 ?>
-<h3>Первый виджет</h3>
+<h3>My first widget</h3>
 <p>
-    <?= 'Сумма А и В равна '.$c; ?>
+    <?= 'The summ of A and B is equal '.$c; ?>
 </p>

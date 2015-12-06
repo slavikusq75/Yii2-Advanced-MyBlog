@@ -5,17 +5,44 @@ use yii\widgets\ActiveForm;
 use frontend\components\FirstWidget;
 use frontend\components\SecondWidget;
 use yii\bootstrap\Modal;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model \yii\db\ActiveRecord */
 /* @var $model \frontend\models\TechsupportForm */
 /* @var $form ActiveForm */
+
 $this->registerJsFile('@web/js/main-index.js',['position' => $this::POS_HEAD],'main-index');
-$this->registerJs('alert("Приступим к заполнению формы!")', $this::POS_READY, 'hello-message');
+$this->registerJs('alert("Lets fill a form!")', $this::POS_READY, 'hello-message');
 $this->registerCssFile('@web/css/main.css');
 $this->registerCss("body {background: #9f6;}");
 ?>
+
+<?php
+
+echo 'Choose a date, please ';
+echo DatePicker::widget([
+    'attribute' => 'from_date',
+    //'language' => 'ru',
+    //'dateFormat' => 'yyyy-MM-dd',
+]);
+
+?>
+
 <div class="techsupport">
+
+    <?php
+
+    Modal::begin([
+        'header' => '<h2>Modal widget works!</h2>',
+        'toggleButton' => ['label' => 'Push to check how Modal widget works'],
+    ]);
+
+    echo 'It is a modal window content';
+
+    Modal::end();
+
+    ?>
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -71,17 +98,8 @@ $this->registerCss("body {background: #9f6;}");
 
 <? SecondWidget::begin() ?>
 
-    Этот текст сделаем красным.
+    <h3>My second widget</h3>
+    It is my SecondWidget text.
 
 <? SecondWidget::end() ?>
 
-<?php
-
-Modal::begin([
-    'header' => '<h2>Привет МИР!!!</h2>',
-    'toggleButton' => ['label' => 'нажми'],
-]);
-
-echo 'Это контент модального окна';
-
-Modal::end();

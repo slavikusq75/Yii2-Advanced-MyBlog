@@ -3,6 +3,7 @@
 use frontend\components\FirstWidget;
 use frontend\components\SecondWidget;
 use yii\bootstrap\Modal;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $hello string */
@@ -36,3 +37,15 @@ Modal::begin([
 echo 'Это контент модального окна';
 
 Modal::end();
+?>
+<br>
+
+<?php
+
+echo 'Выберите дату ';
+echo DatePicker::widget([
+    'attribute' => 'from_date',
+    //'language' => 'ru',
+    //'dateFormat' => 'yyyy-MM-dd',
+]);
+
