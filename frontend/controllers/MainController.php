@@ -19,7 +19,7 @@ use frontend\models\ClientsForm;
 
 class MainController extends \yii\web\Controller
 {
-/*    public function actionIndex()
+    public function actionIndex()
     {
         $hello = 'Hello everybody!';
 
@@ -28,7 +28,7 @@ class MainController extends \yii\web\Controller
             [
                 'hello' => $hello
             ]);
-    } */
+    }
 
     /*public function actionEntry()
     {

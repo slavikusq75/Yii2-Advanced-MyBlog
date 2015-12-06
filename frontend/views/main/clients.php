@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'family_name') ?>
         <?= $form->field($model, 'first_name') ?>
         <?= $form->field($model, 'birth_date') ?>
-    
+
         <div class="form-group">
             <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
         </div>
