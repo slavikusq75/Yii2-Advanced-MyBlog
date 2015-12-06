@@ -1,10 +1,7 @@
 
 Домашечка № 4:
 
-1. Створені та підключені до форми techsupport файли:
--  /css/main.css;
--  /js/main.js;
--  /js/main-index.js
+1. Створені та підключені до форми techsupport файли: /css/main.css, /js/main.js, /js/main-index.js.
 
 2. Підключені стандартні віджети:
 -  DatePicker;
