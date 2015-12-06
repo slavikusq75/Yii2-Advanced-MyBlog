@@ -1,5 +1,5 @@
 <?php
-use frontend\assets\AppAsset;
+use frontend\assets\MyAsset;
 /**
  * Created by PhpStorm.
  * User: slava
@@ -8,7 +8,7 @@ use frontend\assets\AppAsset;
  */
 /* @var $content string */
 /* @var $this \yii\web\View */
-AppAsset::register($this);
+MyAsset::register($this);
 $this->beginPage();
 ?>
 
