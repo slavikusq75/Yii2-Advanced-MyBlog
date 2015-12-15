@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\data\ActiveDataProvider;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\ClientsForm */
 /* @var $form ActiveForm */
@@ -21,3 +21,6 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div><!-- clients -->
+
+
+

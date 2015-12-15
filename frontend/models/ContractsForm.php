@@ -11,9 +11,6 @@ use Yii;
  * @property integer $contract_number
  * @property string $contract_date
  * @property integer $client_id
- *
- * @property Clients $clients
- * @property Contracts[] $Contracts
  */
 class ContractsForm extends \yii\db\ActiveRecord
 {
@@ -52,17 +49,14 @@ class ContractsForm extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getClients()
+    public function getClientsForm()
     {
-        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
+        return $this->hasOne(ClientsForm::className(), ['id' => 'client_id']);
     }
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getContracts()
-    {
-        return $this->hasMany(Contracts::className(), ['client_id' => 'id']);
-    }
+
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -43,4 +43,9 @@ class ClientsForm extends \yii\db\ActiveRecord
             'birth_date' => 'Birth Date',
         ];
     }
+
+    public function getContractsForm()
+    {
+        return $this->hasMany(ContractsForm::className(), ['client_id' => 'id']);
+    }
 }
