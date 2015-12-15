@@ -13,6 +13,7 @@ use yii\widgets\ActiveForm;
 
         <?= $form->field($model, 'contract_number') ?>
         <?= $form->field($model, 'contract_date') ?>
+        <?= $form->field($model, 'client_id') ?>
     
         <div class="form-group">
             <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
