@@ -16,9 +16,7 @@ class m151218_210308_create_junction_employees_and_reports extends Migration
 
     public function down()
     {
-        echo "m151218_210308_create_junction_employees_and_reports cannot be reverted.\n";
-
-        return false;
+        $this->dropTable('employees_reports');
     }
 
     /*
