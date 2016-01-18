@@ -10,6 +10,7 @@ use yii\widgets\ActiveForm;
 use backend\models\Role;
 use yii\helpers\ArrayHelper;
 use backend\models\Status;
+use backend\models\UserType;
 //use yii\db\Expression;
 
 /**
@@ -32,6 +33,16 @@ class User extends ActiveRecord implements IdentityInterface
 {
 
     const STATUS_ACTIVE = 10;
+
+    /**
+     *getUserType
+     *line break to avoid word wrap in PDF
+     * code as single line in your IDE
+     */
+    public function getUserType()
+    {
+        return $this->hasOne(UserType::className(), ['user_type_value' => 'user_type_id']);
+    }
 
     /**
      * get status relation

@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 use \yii\db\ActiveRecord;
+use common\models\User;
 
 /**
  * This is the model class for table "user_type".
@@ -14,6 +15,14 @@ use \yii\db\ActiveRecord;
  */
 class UserType extends ActiveRecord
 {
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(User::className(), ['user_type_id' => 'user_type_value']);
+    }
+
     /**
      * @inheritdoc
      */
