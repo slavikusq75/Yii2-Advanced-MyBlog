@@ -19,3 +19,9 @@
 -	Email registration -	SMTP \ API	http://mandrill.com/
 
 3.CSS                  -    wrapbootstrap.com
+
+
+Хід роботи:
+
+1. Створено таблицю user та модель User.
+2. Створено таблиці: role
