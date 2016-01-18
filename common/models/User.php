@@ -11,6 +11,9 @@ use backend\models\Role;
 use yii\helpers\ArrayHelper;
 use backend\models\Status;
 use backend\models\UserType;
+use yii\helpers\Url;
+use yii\helpers\Html;
+use frontend\models\Profile;
 //use yii\db\Expression;
 
 /**
@@ -33,6 +36,35 @@ class User extends ActiveRecord implements IdentityInterface
 {
 
     const STATUS_ACTIVE = 10;
+
+    /**
+     * @getProfile
+     *
+     */
+    public function getProfile()
+    {
+        return $this->hasOne(Profile::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @getProfileId
+     *
+     */
+    public function getProfileId()
+    {
+        return $this->profile ? $this->profile->id : 'none';
+    }
+
+    /**
+     * @getProfileLink
+     *
+     */
+    public function getProfileLink()
+    {
+        $url = Url::to(['profile/view', 'id'=>$this->profileId]);
+        $options = [];
+        return Html::a($this->profile ? 'profile' : 'none', $url, $options);
+    }
 
     /**
      *getUserType
