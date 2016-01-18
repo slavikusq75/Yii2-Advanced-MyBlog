@@ -14,7 +14,7 @@ use backend\models\UserType;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use frontend\models\Profile;
-//use yii\db\Expression;
+use yii\base\NotSupportedException;
 
 /**
  * This is the model class for table "user".
@@ -30,7 +30,7 @@ use frontend\models\Profile;
  * @property integer $user_type_id
  * @property string $created_at
  * @property string $updated_at
- * @property string $password
+ * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -209,8 +209,10 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status_id', 'default', 'value' => self::STATUS_ACTIVE],
             [['status_id'],'in', 'range'=>array_keys($this->getStatusList())],
+
             ['role_id', 'default', 'value' => 10],
             [['role_id'],'in', 'range'=>array_keys($this->getRoleList())],
+
             ['user_type_id', 'default', 'value' => 10],
             [['user_type_id'],'in', 'range'=>array_keys($this->getUserTypeList())],
 
@@ -218,6 +220,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['username','required'],
             ['username','unique'],
             ['username','string', 'min' => 2, 'max' => 255],
+
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -334,21 +337,36 @@ class User extends ActiveRecord implements IdentityInterface
         return Yii::$app->security->validatePassword($password, $this->password_hash);
     }
 
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
     public function setPassword($password)
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
 
+    /**
+     * Generates "remember me" authentication key
+     */
     public function generateAuthKey()
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
 
+    /**
+     * Generates new password reset token
+     * 2 lines to avoid wordwrapping, should be one line
+     */
     public function generatePasswordResetToken()
     {
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
+    /**
+     * Removes password reset token
+     */
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
