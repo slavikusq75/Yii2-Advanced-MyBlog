@@ -45,6 +45,33 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
+     * get user type name
+     *
+     */
+    public function getUserTypeName()
+    {
+        return $this->userType ? $this->userType->user_type_name : '- no user type -';
+    }
+
+    /**
+     * get list of user types for dropdown
+     */
+    public static function getUserTypeList()
+    {
+        $droptions = UserType::find()->asArray()->all();
+        return Arrayhelper::map($droptions, 'user_type_value', 'user_type_name');
+    }
+
+    /**
+     * get user type id
+     *
+     */
+    public function getUserTypeId()
+    {
+        return $this->userType ? $this->userType->id : 'none';
+    }
+
+    /**
      * get status relation
      *
      */
@@ -131,6 +158,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['role_id', 'default', 'value' => 10],
             [['role_id'],'in', 'range'=>array_keys($this->getRoleList())],
             ['user_type_id', 'default', 'value' => 10],
+            [['user_type_id'],'in', 'range'=>array_keys($this->getUserTypeList())],
 
             ['username', 'filter', 'filter' => 'trim'],
             ['username','required'],
