@@ -367,6 +367,7 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * Removes password reset token
      */
+
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
