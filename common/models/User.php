@@ -7,6 +7,8 @@ use \yii\db\ActiveRecord;
 use yii\db\Expression;
 use yii\web\IdentityInterface;
 use yii\widgets\ActiveForm;
+use backend\models\Role;
+use yii\helpers\ArrayHelper;
 //use yii\db\Expression;
 
 /**
@@ -29,6 +31,33 @@ class User extends ActiveRecord implements IdentityInterface
 {
 
     const STATUS_ACTIVE = 10;
+
+    /**
+     * get role relationship
+     *
+     */
+    public function getRole()
+    {
+        return $this->hasOne(Role::className(), ['role_value' => 'role_id']);
+    }
+
+    /**
+     * get role name
+     *
+     */
+    public function getRoleName()
+    {
+        return $this->role ? $this->role->role_name : '- no role -';
+    }
+
+    /**
+     * get list of roles for dropdown
+     */
+    public static function getRoleList()
+    {
+        $droptions = Role::find()->asArray()->all();
+        return Arrayhelper::map($droptions, 'role_value', 'role_name');
+    }
 
     /**
      * @inheritdoc
