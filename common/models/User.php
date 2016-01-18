@@ -9,6 +9,7 @@ use yii\web\IdentityInterface;
 use yii\widgets\ActiveForm;
 use backend\models\Role;
 use yii\helpers\ArrayHelper;
+use backend\models\Status;
 //use yii\db\Expression;
 
 /**
@@ -31,6 +32,33 @@ class User extends ActiveRecord implements IdentityInterface
 {
 
     const STATUS_ACTIVE = 10;
+
+    /**
+     * get status relation
+     *
+     */
+    public function getStatus()
+    {
+        return $this->hasOne(Status::className(), ['status_value' => 'status_id']);
+    }
+
+    /**
+     * get status name
+     *
+     */
+    public function getStatusName()
+    {
+        return $this->status ? $this->status->status_name : '- no status -';
+    }
+
+    /**
+     * get list of statuses for dropdown
+     */
+    public static function getStatusList()
+    {
+        $droptions = Status::find()->asArray()->all();
+        return Arrayhelper::map($droptions, 'status_value', 'status_name');
+    }
 
     /**
      * get role relationship
@@ -88,7 +116,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             ['status_id', 'default', 'value' => self::STATUS_ACTIVE],
+            [['status_id'],'in', 'range'=>array_keys($this->getStatusList())],
             ['role_id', 'default', 'value' => 10],
+            [['role_id'],'in', 'range'=>array_keys($this->getRoleList())],
             ['user_type_id', 'default', 'value' => 10],
 
             ['username', 'filter', 'filter' => 'trim'],
