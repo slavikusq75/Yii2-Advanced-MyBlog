@@ -26,4 +26,4 @@
 1. Створено таблицю user та модель User.
 2. Створено таблиці: role, status, user_type, gender, profile
 3. Створено моделі: Role, Status, UserType, Gender, Profile
-4. Створено хелпери: ValueHelpers
+4. Створено хелпери: ValueHelpers, ValueHelpers

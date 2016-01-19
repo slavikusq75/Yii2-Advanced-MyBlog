@@ -74,5 +74,46 @@ class PermissionHelpers
         }
     }
 
+    /**
+     * @requireMinimumStatus
+     * used two lines for if statement to avoid word wrapping
+     * @param mixed $status_name
+     */
+    public static function requireMinimumStatus($status_name)
+    {
+        if ( Yii::$app->user->identity->status_id >=
+            ValueHelpers::getStatusValue($status_name)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    /**
+     * @requireRole
+     * used two lines for if statement to avoid word wrapping
+     * @param mixed $role_name
+     */
+    public static function requireRole($role_name)
+    {
+        if ( Yii::$app->user->identity->role_id == ValueHelpers::getRoleValue($role_name)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @requireMinimumRole
+     * used two lines for if statement to avoid word wrapping
+     * @param mixed $role_name
+     */
+    public static function requireMinimumRole($role_name)
+    {
+        if ( Yii::$app->user->identity->role_id >= ValueHelpers::getRoleValue($role_name)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
